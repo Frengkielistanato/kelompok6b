@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">GKLF</string>
+    //parameter gakboleh spasi value spasi
+    <string name="lewati_perkenalan">Lewati Perkenalan</string>
+    <string name="lanjutkan">Lanjutkan</string>
+    <string name="makanan">Makanan</string>
+    <string name="makanan_desc">Lebih mudah untuk mengetahui \n makanan yang ready</string>
+    <string name="kesehatan">Makanan</string>
+    <string name="kesehatan_desc">Makanan sudah terjamin \n kesehatannya</string>
+    <string name="sign_in">sign in</string>
+    <string name="username">username</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="nama">Nama</string>
+    <string name="email">Email Address</string>
+    <string name="upload">Upload</string>
+    <string name="photo">Photo</string>
+    <string name="selamat_datang">Selamat Datang \n Frengki</string>
+    <string name="simpan_dan_lanjutkan">Simpan dan Lanjutkan</string>
+    <string name="makanan_ready">Makanan Ready</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="tinggi_kalori">Tinggi Kalori</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="makanan_deskripsi">pada makanann ini terdapat karbohidrat \n protein, lemak, vitamin</string>
+    <string name="pengawas_koki">Pengawas Koki</string>
+    <string name="checkout">Checkout</string>
+    <string name="bayar_sekarang">Bayar Sekarang</string>
+    <string name="batalkan">Batalkan</string>
+    <string name="when">When</string>
+    <string name="datetime">Date and Time</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="hmj_kes">HMJ Kesehatan</string>
+    <string name="items">Items</string>
+</resources>
