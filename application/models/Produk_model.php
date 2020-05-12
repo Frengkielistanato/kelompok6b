@@ -12,7 +12,7 @@ class Produk_model extends CI_Model {
 
 	public function read()
 	{
-		$this->db->select('produk.id, produk.barcode, produk.nama_produk, produk.harga, produk.stok, kategori_produk.kategori, kalori_produk.kalori');
+		$this->db->select('produk.id, produk.barcode, produk.nama_produk, produk.image, produk.harga, produk.stok, produk.deskripsi, kategori_produk.kategori, kalori_produk.kalori');
 		$this->db->from($this->table);
 		$this->db->join('kategori_produk', 'produk.kategori = kategori_produk.id');
 		$this->db->join('kalori_produk', 'produk.kalori = kalori_produk.id');
@@ -30,10 +30,10 @@ class Produk_model extends CI_Model {
 		$this->db->where('id', $id);
 		return $this->db->delete($this->table);
 	}
-
+	
 	public function getProduk($id)
 	{
-		$this->db->select('produk.id, produk.barcode, produk.nama_produk, produk.harga, produk.stok, kategori_produk.id as kategori_id, kategori_produk.kategori, kalori_produk.id as kalori_id, kalori_produk.kalori');
+		$this->db->select('produk.id, produk.barcode, produk.nama_produk, produk.image, produk.harga, produk.stok, produk.deskripsi, kategori_produk.id as kategori_id, kategori_produk.kategori, kalori_produk.id as kalori_id, kalori_produk.kalori');
 		$this->db->from($this->table);
 		$this->db->join('kategori_produk', 'produk.kategori = kategori_produk.id');
 		$this->db->join('kalori_produk', 'produk.kalori = kalori_produk.id');

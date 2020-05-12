@@ -5,12 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Produk</title>
+  <title>Pengguna</title>
   <link rel="stylesheet" href="<?php echo base_url('assets/vendor/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/vendor/adminlte/plugins/sweetalert2/sweetalert2.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/vendor/adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') ?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/vendor/adminlte/plugins/select2/css/select2.min.css') ?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/vendor/adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') ?>">
   <?php $this->load->view('partials/head'); ?>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -27,7 +25,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col">
-            <h1 class="m-0 text-dark">Produk</h1>
+            <h1 class="m-0 text-dark">Pengguna</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -42,18 +40,12 @@
             <button class="btn btn-success" data-toggle="modal" data-target="#modal" onclick="add()">Add</button>
           </div>
           <div class="card-body">
-            <table class="table w-100 table-bordered table-hover" id="produk">
+            <table class="table w-100 table-bordered table-hover" id="pengguna">
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Barcode</th>
+                  <th>Username</th>
                   <th>Nama</th>
-                  <th>Gambar</th>
-                  <th>Kategori</th>
-                  <th>Kalori</th>
-                  <th>Harga</th>
-                  <th>Stok</th>
-                  <th>Deskripsi</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -78,42 +70,20 @@
     </button>
   </div>
   <div class="modal-body">
-    <form id="form" enctype="multipart/form-data">
+    <form id="form">
       <input type="hidden" name="id">
       <div class="form-group">
-        <label>Barcode</label>
-        <input type="text" class="form-control" placeholder="Barcode" name="barcode" required>
+        <label>Username</label>
+        <input type="text" class="form-control" placeholder="Username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
       </div>
       <div class="form-group">
         <label>Nama</label>
-        <input type="text" class="form-control" placeholder="Nama" name="nama_produk" required>
+        <input type="text" class="form-control" placeholder="Nama" name="nama" required>
       </div>
-      <div class="form-group">
-        <label>Gambar</label>
-        <input type="file" class="form-control-file" placeholder="Gambar" name="image" required>
-        <?php echo form_open_multipart('produk/add');?>
-      </div>
-      <div class="form-group">
-        <label>Kategori</label>
-        <select name="kategori" id="kategori" class="form-control select2" required></select>
-      </div>
-      <div class="form-group">
-        <label>Kalori</label>
-        <select name="kalori" id="kalori" class="form-control select2" required></select>
-      </div>
-      <div class="form-group">
-        <label>Harga</label>
-        <input type="text" class="form-control" placeholder="Harga" name="harga" required>
-      </div>
-      <div class="form-group">
-        <label>Stok</label>
-        <input type="text" class="form-control" placeholder="Stok" name="stok" value="0" readonly>
-      </div>
-      <div class="form-group">
-        <label>Deskripsi</label>
-        <input type="text" class="form-control" placeholder="Deskripsi" name="deskripsi" required>
-      </div>
-      <div class="form-group">
       <button class="btn btn-success" type="submit">Add</button>
       <button class="btn btn-danger" data-dismiss="modal">Close</button>
     </form>
@@ -128,16 +98,13 @@
 <script src="<?php echo base_url('assets/vendor/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/vendor/adminlte/plugins/jquery-validation/jquery.validate.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/vendor/adminlte/plugins/sweetalert2/sweetalert2.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/vendor/adminlte/plugins/select2/js/select2.min.js') ?>"></script>
 <script>
-  var readUrl = '<?php echo site_url('produk/read') ?>';
-  var addUrl = '<?php echo site_url('produk/add') ?>';
-  var deleteUrl = '<?php echo site_url('produk/delete') ?>';
-  var editUrl = '<?php echo site_url('produk/edit') ?>';
-  var getProdukUrl = '<?php echo site_url('produk/get_produk') ?>';
-  var kategoriSearchUrl = '<?php echo site_url('kategori_produk/search') ?>';
-  var kaloriSearchUrl = '<?php echo site_url('kalori_produk/search') ?>';
+  var readUrl = '<?php echo site_url('pengguna/read') ?>';
+  var addUrl = '<?php echo site_url('pengguna/add') ?>';
+  var deleteUrl = '<?php echo site_url('pengguna/delete') ?>';
+  var editUrl = '<?php echo site_url('pengguna/edit') ?>';
+  var getPenggunaUrl = '<?php echo site_url('pengguna/get_pengguna') ?>';
 </script>
-<script src="<?php echo base_url('assets/js/produk.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/pengguna.min.js') ?>"></script>
 </body>
 </html>

@@ -10,6 +10,7 @@ class Produk extends CI_Controller {
 			redirect('/');
 		}
 		$this->load->model('produk_model');
+		$this->load->helper(array('form', 'url'));
 	}
 
 	public function index()
@@ -25,10 +26,12 @@ class Produk extends CI_Controller {
 				$data[] = array(
 					'barcode' => $produk->barcode,
 					'nama' => $produk->nama_produk,
+					'image' => $produk->image,
 					'kategori' => $produk->kategori,
 					'kalori' => $produk->kalori,
 					'harga' => $produk->harga,
 					'stok' => $produk->stok,
+					'deskripsi' => $produk->deskripsi,
 					'action' => '<button class="btn btn-sm btn-success" onclick="edit('.$produk->id.')">Edit</button> <button class="btn btn-sm btn-danger" onclick="remove('.$produk->id.')">Delete</button>'
 				);
 			}
@@ -42,18 +45,37 @@ class Produk extends CI_Controller {
 	}
 
 	public function add()
-	{
+	{	
 		$data = array(
 			'barcode' => $this->input->post('barcode'),
 			'nama_produk' => $this->input->post('nama_produk'),
+			'image' => $pict,
 			'kalori' => $this->input->post('kalori'),
 			'kategori' => $this->input->post('kategori'),
 			'harga' => $this->input->post('harga'),
-			'stok' => $this->input->post('stok')
+			'stok' => $this->input->post('stok'),
+			'deskripsi' => $this->input->post('deskripsi')
 		);
+		//upload photo
+		$config['max_size']=2048;
+		$config['allowed_types']="png|jpg|jpeg|gif";
+		$config['remove_spaces']=TRUE;
+		$config['overwrite']=TRUE;
+		$config['upload_path']=FCPATH.'gambar';
+
+		$this->load->library('upload');
+		$this->upload->initialize($config);
+
+		//ambil data image
+		$this->upload->do_upload('image');
+		$data_image=$this->upload->data('file_name');
+		$location=base_url().'gambar/';
+		$pict=$location.$data_image;
+
 		if ($this->produk_model->create($data)) {
 			echo json_encode($data);
 		}
+
 	}
 
 	public function delete()
@@ -70,14 +92,33 @@ class Produk extends CI_Controller {
 		$data = array(
 			'barcode' => $this->input->post('barcode'),
 			'nama_produk' => $this->input->post('nama_produk'),
+			'image' => $pict,
 			'kalori' => $this->input->post('kalori'),
 			'kategori' => $this->input->post('kategori'),
 			'harga' => $this->input->post('harga'),
-			'stok' => $this->input->post('stok')
+			'stok' => $this->input->post('stok'),
+			'deskripsi' => $this->input->post('deskripsi')
 		);
+		//upload photo
+		$config['max_size']=2048;
+		$config['allowed_types']="png|jpg|jpeg|gif";
+		$config['remove_spaces']=TRUE;
+		$config['overwrite']=TRUE;
+		$config['upload_path']=FCPATH.'gambar';
+
+		$this->load->library('upload');
+		$this->upload->initialize($config);
+
+		//ambil data image
+		$this->upload->do_upload('image');
+		$data_image=$this->upload->data('file_name');
+		$location=base_url().'gambar/';
+		$pict=$location.$data_image;
+
 		if ($this->produk_model->update($id,$data)) {
 			echo json_encode('sukses');
 		}
+		redirect('produk');
 	}
 
 	public function get_produk()
@@ -139,6 +180,7 @@ class Produk extends CI_Controller {
 		$produk = $this->produk_model->dataStok();
 		echo json_encode($produk);
 	}
+
 
 }
 
