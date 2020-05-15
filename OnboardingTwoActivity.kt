@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kantinsehat.gklf.R
+import com.kantinsehat.gklf.sign.SignInActivity
 import com.kantinsehat.gklf.sign.signin.SignInActivity
 import kotlinx.android.synthetic.main.activity_onboarding_two.*
 
