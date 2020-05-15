@@ -90,8 +90,7 @@
       </div>
       <div class="form-group">
         <label>Gambar</label>
-        <input type="file" class="form-control-file" placeholder="Gambar" name="image" required>
-        <?php echo form_open_multipart('produk/add');?>
+        <input type="file" class="form-control-file" placeholder="Gambar" name="image">
       </div>
       <div class="form-group">
         <label>Kategori</label>

@@ -49,7 +49,7 @@ class Produk extends CI_Controller {
 		$data = array(
 			'barcode' => $this->input->post('barcode'),
 			'nama_produk' => $this->input->post('nama_produk'),
-			'image' => $pict,
+			'image' => $this->input->post('image'),
 			'kalori' => $this->input->post('kalori'),
 			'kategori' => $this->input->post('kategori'),
 			'harga' => $this->input->post('harga'),
@@ -92,7 +92,7 @@ class Produk extends CI_Controller {
 		$data = array(
 			'barcode' => $this->input->post('barcode'),
 			'nama_produk' => $this->input->post('nama_produk'),
-			'image' => $pict,
+			'image' => $this->input->post('image'),
 			'kalori' => $this->input->post('kalori'),
 			'kategori' => $this->input->post('kategori'),
 			'harga' => $this->input->post('harga'),
@@ -118,7 +118,6 @@ class Produk extends CI_Controller {
 		if ($this->produk_model->update($id,$data)) {
 			echo json_encode('sukses');
 		}
-		redirect('produk');
 	}
 
 	public function get_produk()
