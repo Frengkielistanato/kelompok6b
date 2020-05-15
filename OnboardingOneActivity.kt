@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bagicode.bwamov.utils.Preferences
 import com.kantinsehat.gklf.R
+import com.kantinsehat.gklf.sign.SignInActivity
 import com.kantinsehat.gklf.sign.signin.SignInActivity
 import kotlinx.android.synthetic.main.activity_onboarding_one.*
+import java.util.prefs.Preferences
 
 class OnboardingOneActivity : AppCompatActivity() {
     lateinit var preferences: Preferences
