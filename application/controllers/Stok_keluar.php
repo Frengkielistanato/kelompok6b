@@ -72,5 +72,3 @@ class Stok_keluar extends CI_Controller {
 
 }
 
-/* End of file Stok_keluar.php */
-/* Location: ./application/controllers/Stok_keluar.php */

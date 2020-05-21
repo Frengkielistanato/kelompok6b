@@ -41,5 +41,3 @@ class Kategori_produk_model extends CI_Model {
 
 }
 
-/* End of file Kategori_produk_model.php */
-/* Location: ./application/models/Kategori_produk_model.php */

@@ -98,6 +98,3 @@ class Supplier extends CI_Controller {
 	}
 
 }
-
-/* End of file Supplier.php */
-/* Location: ./application/controllers/Supplier.php */

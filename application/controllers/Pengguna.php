@@ -81,6 +81,3 @@ class Pengguna extends CI_Controller {
 	}
 
 }
-
-/* End of file Pengguna.php */
-/* Location: ./application/controllers/Pengguna.php */

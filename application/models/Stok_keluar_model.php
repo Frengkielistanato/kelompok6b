@@ -34,5 +34,3 @@ class Stok_keluar_model extends CI_Model {
 
 }
 
-/* End of file Stok_keluar_model.php */
-/* Location: ./application/models/Stok_keluar_model.php */

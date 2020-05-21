@@ -40,6 +40,3 @@ class Pelanggan_model extends CI_Model {
 	}
 
 }
-
-/* End of file Pelanggan_model.php */
-/* Location: ./application/models/Pelanggan_model.php */

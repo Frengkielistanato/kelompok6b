@@ -74,6 +74,3 @@ class Produk_model extends CI_Model {
 	}
 
 }
-
-/* End of file Produk_model.php */
-/* Location: ./application/models/Produk_model.php */

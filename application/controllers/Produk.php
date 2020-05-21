@@ -56,27 +56,42 @@ class Produk extends CI_Controller {
 			'stok' => $this->input->post('stok'),
 			'deskripsi' => $this->input->post('deskripsi')
 		);
-		//upload photo
-		$config['max_size']=2048;
-		$config['allowed_types']="png|jpg|jpeg|gif";
-		$config['remove_spaces']=TRUE;
-		$config['overwrite']=TRUE;
-		$config['upload_path']=FCPATH.'gambar';
-
-		$this->load->library('upload');
-		$this->upload->initialize($config);
-
-		//ambil data image
-		$this->upload->do_upload('image');
-		$data_image=$this->upload->data('file_name');
-		$location=base_url().'gambar/';
-		$pict=$location.$data_image;
-
 		if ($this->produk_model->create($data)) {
 			echo json_encode($data);
 		}
 
 	}
+
+	public function process()
+    {
+        $post = $this->input->post(null, TRUE);
+        if(isset($_POST['add'])){
+            $this->produk_model->add($post);
+        } else {
+            $config['upload_path']  = './gambar/product/';
+            $config['allowed_types'] = 'jpg|jpeg|png|pdf';
+            $config['max_size']       = 2048;
+            $config['file_name']    ='produk-' .date('ymd').'-'.substr(md5(rand()),0,10);
+            $this->load->library('gambar', $config);
+
+            if(@$_FILES['image']['nama_produk'] != null){
+                if($this->upload->do_upload('image')){
+                    $post['image'] = $this->upload->data('file_name');
+                    
+                    $this->produk_model->add($post);
+                    redirect('produk');
+                }else{ 
+                    $error = $this->upload->display_errors();
+                    $this->session->set_flashdata('error', $error);
+                }
+
+            }
+        }
+        if($this->db->affected_rows() > 0){
+            echo "<script>alert('Data Berhasil Di Simpan');</script>";
+        }
+        echo "<script>window.location='".site_url('bukuu')."';</script>";
+    }
 
 	public function delete()
 	{
@@ -182,6 +197,3 @@ class Produk extends CI_Controller {
 
 
 }
-
-/* End of file Produk.php */
-/* Location: ./application/controllers/Produk.php */

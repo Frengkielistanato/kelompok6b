@@ -41,5 +41,3 @@ class Supplier_model extends CI_Model {
 
 }
 
-/* End of file Supplier_model.php */
-/* Location: ./application/models/Supplier_model.php */

@@ -89,6 +89,3 @@ class Kategori_produk extends CI_Controller {
 	}
 
 }
-
-/* End of file Kategori_produk.php */
-/* Location: ./application/controllers/Kategori_produk.php */

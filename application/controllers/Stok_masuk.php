@@ -104,6 +104,3 @@ class Stok_masuk extends CI_Controller {
 	}
 
 }
-
-/* End of file Stok_masuk.php */
-/* Location: ./application/controllers/Stok_masuk.php */

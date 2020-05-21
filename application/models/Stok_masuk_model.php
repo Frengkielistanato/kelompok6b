@@ -48,5 +48,3 @@ class Stok_masuk_model extends CI_Model {
 
 }
 
-/* End of file Stok_masuk_model.php */
-/* Location: ./application/models/Stok_masuk_model.php */

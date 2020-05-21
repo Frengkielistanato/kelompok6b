@@ -98,6 +98,3 @@ class Pelanggan extends CI_Controller {
 	}
 
 }
-
-/* End of file Pelanggan.php */
-/* Location: ./application/controllers/Pelanggan.php */

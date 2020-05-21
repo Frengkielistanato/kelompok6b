@@ -141,5 +141,3 @@ class Transaksi extends CI_Controller {
 
 }
 
-/* End of file Transaksi.php */
-/* Location: ./application/controllers/Transaksi.php */

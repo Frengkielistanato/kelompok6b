@@ -41,5 +41,3 @@ class Kalori_produk_model extends CI_Model {
 
 }
 
-/* End of file Kalori_produk_model.php */
-/* Location: ./application/models/Kalori_produk_model.php */

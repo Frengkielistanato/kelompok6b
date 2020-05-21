@@ -89,6 +89,3 @@ class Kalori_produk extends CI_Controller {
 	}
 
 }
-
-/* End of file Satuan_produk.php */
-/* Location: ./application/controllers/Satuan_produk.php */

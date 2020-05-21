@@ -50,6 +50,3 @@ class Auth extends CI_Controller {
 	}
 
 }
-
-/* End of file Auth.php */
-/* Location: ./application/controllers/Auth.php */

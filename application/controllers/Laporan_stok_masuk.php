@@ -13,5 +13,3 @@ class Laporan_stok_masuk extends CI_Controller {
 
 }
 
-/* End of file Laporan_stok_masuk.php */
-/* Location: ./application/controllers/Laporan_stok_masuk.php */

@@ -12,6 +12,3 @@ class Laporan_penjualan extends CI_Controller {
 	}
 
 }
-
-/* End of file Laporan_penjualan.php */
-/* Location: ./application/controllers/Laporan_penjualan.php */

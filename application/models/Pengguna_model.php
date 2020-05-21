@@ -43,5 +43,3 @@ class Pengguna_model extends CI_Model {
 
 }
 
-/* End of file Pengguna_model.php */
-/* Location: ./application/models/Pengguna_model.php */
