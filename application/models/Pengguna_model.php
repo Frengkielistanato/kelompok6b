@@ -30,7 +30,7 @@ class Pengguna_model extends CI_Model {
 
 	public function getPengguna($id)
 	{
-		$this->db->select('id, username, nama');
+		$this->db->select('id, username, nama, password');
 		$this->db->where('id', $id);
 		return $this->db->get($this->table);
 	}

@@ -29,17 +29,6 @@ function reloadTable() {
     stok_masuk.ajax.reload()
 }
 
-function checkKeterangan(obj) {
-    if (obj.value == "lain") {
-        $(".supplier").hide();
-        $("#supplier").attr("disabled", "disabled");
-        $(".lain").removeClass("d-none") 
-    } else {
-        $(".lain").addClass("d-none");
-        $("#supplier").removeAttr("disabled");
-        $(".supplier").show()
-    }
-}
 
 function addData() {
     $.ajax({
@@ -85,21 +74,6 @@ $("#barcode").select2({
         dataType: "json",
         data: params => ({
             barcode: params.term
-        }),
-        processResults: res => ({
-            results: res
-        }),
-        cache: true
-    }
-});
-$("#supplier").select2({
-    placeholder: "Supplier",
-    ajax: {
-        url: supplierSearchUrl,
-        type: "post",
-        dataType: "json",
-        data: params => ({
-            supplier: params.term
         }),
         processResults: res => ({
             results: res

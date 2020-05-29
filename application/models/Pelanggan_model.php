@@ -27,8 +27,9 @@ class Pelanggan_model extends CI_Model {
 		return $this->db->delete($this->table);
 	}
 
-	public function getSupplier($id)
+	public function getPelanggan($id)
 	{
+		$this->db->select('id, nama, username, password, jenis_kelamin, alamat, telepon');
 		$this->db->where('id', $id);
 		return $this->db->get($this->table);
 	}

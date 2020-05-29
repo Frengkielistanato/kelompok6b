@@ -46,7 +46,6 @@
                   <th>Nama Produk</th> 
                   <th>Jumlah</th> 
                   <th>Keterangan</th> 
-                  <th>Supplier</th> 
                 </tr>
               </thead>
             </table>

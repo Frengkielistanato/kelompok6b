@@ -27,9 +27,6 @@ let laporan_stok_masuk=$("#laporan_stok_masuk").DataTable( {
     , {
         data: "keterangan"
     }
-    , {
-        data: "supplier"
-    }
     ]
 }
 

@@ -151,7 +151,6 @@ function add() {
             qty: qty,
             total_bayar: $("#total").html(),
             jumlah_uang: $('[name="jumlah_uang"]').val(),
-            diskon: $('[name="diskon"]').val(),
             pelanggan: $("#pelanggan").val(),
             nota: $("#nota").html()
         },
@@ -172,9 +171,8 @@ function add() {
 
 function kembalian() {
     let total = $("#total").html(),
-        jumlah_uang = $('[name="jumlah_uang"').val(),
-        diskon = $('[name="diskon"]').val();
-    $(".kembalian").html(jumlah_uang - total - diskon);
+        jumlah_uang = $('[name="jumlah_uang"').val();
+    $(".kembalian").html(jumlah_uang - total);
     checkUang()
 }
 $("#barcode").select2({

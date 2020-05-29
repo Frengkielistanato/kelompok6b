@@ -45,7 +45,6 @@
                   <th>Nama Produk</th> 
                   <th>Total Bayar</th> 
                   <th>Jumlah Uang</th> 
-                  <th>Diskon</th> 
                   <th>Pelanggan</th> 
                   <th>Action</th> 
                 </tr>

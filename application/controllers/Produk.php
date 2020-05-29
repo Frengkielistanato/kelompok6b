@@ -90,7 +90,7 @@ class Produk extends CI_Controller {
         if($this->db->affected_rows() > 0){
             echo "<script>alert('Data Berhasil Di Simpan');</script>";
         }
-        echo "<script>window.location='".site_url('bukuu')."';</script>";
+        echo "<script>window.location='".site_url('produk')."';</script>";
     }
 
 	public function delete()

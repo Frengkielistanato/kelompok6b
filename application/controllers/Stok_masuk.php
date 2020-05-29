@@ -54,7 +54,6 @@ class Stok_masuk extends CI_Controller {
 				'barcode' => $id,
 				'jumlah' => $jumlah,
 				'keterangan' => $this->input->post('keterangan'),
-				'supplier' => $this->input->post('supplier')
 			);
 			if ($this->stok_masuk_model->create($data)) {
 				echo json_encode('sukses');
@@ -83,7 +82,6 @@ class Stok_masuk extends CI_Controller {
 					'nama_produk' => $stok_masuk->nama_produk,
 					'jumlah' => $stok_masuk->jumlah,
 					'keterangan' => $stok_masuk->keterangan,
-					'supplier' => $stok_masuk->supplier
 				);
 			}
 		} else {

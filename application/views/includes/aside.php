@@ -24,14 +24,6 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?php echo site_url('supplier') ?>" class="nav-link <?php echo $uri == 'supplier' ? 'active' : 'no' ?>">
-            <i class="nav-icon fas fa-truck"></i>
-            <p>
-              Supplier
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
           <a href="<?php echo site_url('pelanggan') ?>" class="nav-link <?php echo $uri == 'pelanggan' ? 'active' : 'no' ?>">
             <i class="nav-icon fas fa-address-book"></i>
             <p>

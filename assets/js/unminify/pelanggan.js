@@ -15,6 +15,8 @@ let url, pelanggan = $("#pelanggan").DataTable({
     }, {
         data: "nama"
     }, {
+        data: "username"
+    }, {
         data: "jenis_kelamin"
     }, {
         data: "alamat"
@@ -105,6 +107,7 @@ function edit(id) {
         success: res => {
             $('[name="id"]').val(res.id);
             $('[name="nama"]').val(res.nama);
+            $('[name="username"]').val(res.username);
             $('[name="alamat"]').val(res.alamat);
             $('[name="telepon"]').val(res.telepon);
             $('[name="keterangan"]').val(res.keterangan);

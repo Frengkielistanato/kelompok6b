@@ -24,6 +24,7 @@ class Pelanggan extends CI_Controller {
 			foreach ($this->pelanggan_model->read()->result() as $pelanggan) {
 				$data[] = array(
 					'nama' => $pelanggan->nama,
+					'username' => $pelanggan->username,
 					'jenis_kelamin' => $pelanggan->jenis_kelamin,
 					'alamat' => $pelanggan->alamat,
 					'telepon' => $pelanggan->telepon,
@@ -43,6 +44,8 @@ class Pelanggan extends CI_Controller {
 	{
 		$data = array(
 			'nama' => $this->input->post('nama'),
+			'username' => $this->input->post('username'),
+			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			'alamat' => $this->input->post('alamat'),
 			'telepon' => $this->input->post('telepon'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin')
@@ -65,6 +68,8 @@ class Pelanggan extends CI_Controller {
 		$id = $this->input->post('id');
 		$data = array(
 			'nama' => $this->input->post('nama'),
+			'username' => $this->input->post('username'),
+			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			'alamat' => $this->input->post('alamat'),
 			'telepon' => $this->input->post('telepon'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin')
@@ -77,7 +82,7 @@ class Pelanggan extends CI_Controller {
 	public function get_pelanggan()
 	{
 		$id = $this->input->post('id');
-		$pelanggan = $this->pelanggan_model->getSupplier($id);
+		$pelanggan = $this->pelanggan_model->getPelanggan($id);
 		if ($pelanggan->row()) {
 			echo json_encode($pelanggan->row());
 		}

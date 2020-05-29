@@ -95,10 +95,6 @@
           <option value="lain">Lain</option>
         </select>
       </div>
-      <div class="form-group supplier">
-        <label>Supplier</label>
-        <select name="supplier" class="form-control select2" id="supplier"></select>
-      </div>
       <div class="form-group lain d-none">
         <label>Lain</label>
         <input type="text" class="form-control" placeholder="Lain">
@@ -124,7 +120,6 @@
   var readUrl = '<?php echo site_url('stok_masuk/read') ?>';
   var addUrl = '<?php echo site_url('stok_masuk/add') ?>';
   var getBarcodeUrl = '<?php echo site_url('produk/get_barcode') ?>';
-  var supplierSearchUrl = '<?php echo site_url('supplier/search') ?>';
 </script>
 <script src="<?php echo base_url('assets/js/stok_masuk.min.js') ?>"></script>
 </body>

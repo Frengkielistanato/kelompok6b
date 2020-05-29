@@ -45,9 +45,10 @@
                 <tr>
                   <th>No</th>
                   <th>Nama</th>
+                  <th>Username</th>
                   <th>Jenis Kelamin</th>
+                  <th>Alamat</th>
                   <th>Telepon</th>
-                  <th>Keterangan</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -77,6 +78,14 @@
       <div class="form-group">
         <label>Nama</label>
         <input type="text" class="form-control" placeholder="Nama" name="nama" required>
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" placeholder="Username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
       </div>
       <div class="form-group">
         <label>Jenis Kelamin</label>
