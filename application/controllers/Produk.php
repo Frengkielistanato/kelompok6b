@@ -13,8 +13,9 @@ class Produk extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 	}
 
-	public function index()
-	{
+	public function index($page=NULL,$offset='',$key=NULL)
+	{	
+		$data['query'] = $this->produk_model->get_allimage(); //query dari model
 		$this->load->view('produk');
 	}
 
@@ -26,7 +27,7 @@ class Produk extends CI_Controller {
 				$data[] = array(
 					'barcode' => $produk->barcode,
 					'nama' => $produk->nama_produk,
-					'image' => $produk->image,
+					'image' => "<img src='uploads/".$produk->image."'style='width:200px; height:100px;'>",
 					'kategori' => $produk->kategori,
 					'kalori' => $produk->kalori,
 					'harga' => $produk->harga,
@@ -44,54 +45,93 @@ class Produk extends CI_Controller {
 		echo json_encode($produk);
 	}
 
-	public function add()
-	{	
-		$data = array(
-			'barcode' => $this->input->post('barcode'),
-			'nama_produk' => $this->input->post('nama_produk'),
-			'image' => $this->input->post('image'),
-			'kalori' => $this->input->post('kalori'),
-			'kategori' => $this->input->post('kategori'),
-			'harga' => $this->input->post('harga'),
-			'stok' => $this->input->post('stok'),
-			'deskripsi' => $this->input->post('deskripsi')
-		);
-		if ($this->produk_model->create($data)) {
-			echo json_encode($data);
-		}
+	public function add() {
+        //view yang tampil jika fungsi add diakses pada url
+        $this->load->view('produk');
+    }
+
+	public function insert(){
+		$this->load->library('upload');
+		$nama_file = "file_".time(); //nama file + fungsi time
+		$config['upload_path'] = './uploads/'; //Folder untuk menyimpan hasil upload
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|pdf'; //type yang dapat diakses bisa anda sesuaikan
+		$config['max_size'] = '3072'; //maksimum besar file 3M
+		$config['max_width']  = '5000'; //lebar maksimum 5000 px
+		$config['max_height']  = '5000'; //tinggi maksimu 5000 px
+		$config['file_name'] = $nama_file; //nama yang terupload nantinya
+
+		$this->upload->initialize($config);
+		
+		if($_FILES['image']['name'])
+		{
+			if ($this->upload->do_upload('image'))
+		{	
+			$gambar = $this->upload->data();
+			$data = array(
+				'barcode' => $this->input->post('barcode'),
+				'nama_produk' => $this->input->post('nama_produk'),
+				'image' =>$gambar['file_name'],
+				'kalori' => $this->input->post('kalori'),
+				'kategori' => $this->input->post('kategori'),
+				'harga' => $this->input->post('harga'),
+				'stok' => $this->input->post('stok'),
+				'deskripsi' => $this->input->post('deskripsi')
+			);
+			$this->produk_model->get_insert($data); //akses model untuk menyimpan ke database
+                
+                //pesan yang muncul jika berhasil diupload pada session flashdata
+                $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Tambah data berhasil !!</div></div>");
+                redirect('produk'); //jika berhasil maka akan ditampilkan view upload
+            }else{
+                //pesan yang muncul jika terdapat error dimasukkan pada session flashdata
+                $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Gagal tambah data !!</div></div>");
+                redirect('produk/add'); //jika gagal maka akan ditampilkan form upload
+            }
+        }
 
 	}
 
-	public function process()
-    {
-        $post = $this->input->post(null, TRUE);
-        if(isset($_POST['add'])){
-            $this->produk_model->add($post);
-        } else {
-            $config['upload_path']  = './gambar/product/';
-            $config['allowed_types'] = 'jpg|jpeg|png|pdf';
-            $config['max_size']       = 2048;
-            $config['file_name']    ='produk-' .date('ymd').'-'.substr(md5(rand()),0,10);
-            $this->load->library('gambar', $config);
+	public function edit(){
+		$this->load->library('upload');
+		$nama_file = "file_".time(); //nama file + fungsi time
+		$config['upload_path'] = './uploads/'; //Folder untuk menyimpan hasil upload
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|pdf'; //type yang dapat diakses bisa anda sesuaikan
+		$config['max_size'] = '3072'; //maksimum besar file 3M
+		$config['max_width']  = '5000'; //lebar maksimum 5000 px
+		$config['max_height']  = '5000'; //tinggi maksimu 5000 px
+		$config['file_name'] = $nama_file; //nama yang terupload nantinya
 
-            if(@$_FILES['image']['nama_produk'] != null){
-                if($this->upload->do_upload('image')){
-                    $post['image'] = $this->upload->data('file_name');
-                    
-                    $this->produk_model->add($post);
-                    redirect('produk');
-                }else{ 
-                    $error = $this->upload->display_errors();
-                    $this->session->set_flashdata('error', $error);
-                }
-
+		$this->upload->initialize($config);
+		
+		if($_FILES['image']['name'])
+		{
+			if ($this->upload->do_upload('image'))
+		{	
+			$id = $this->input->post('id');
+			$gambar = $this->upload->data();
+			$data = array(
+				'barcode' => $this->input->post('barcode'),
+				'nama_produk' => $this->input->post('nama_produk'),
+				'image' =>$gambar['file_name'],
+				'kalori' => $this->input->post('kalori'),
+				'kategori' => $this->input->post('kategori'),
+				'harga' => $this->input->post('harga'),
+				'stok' => $this->input->post('stok'),
+				'deskripsi' => $this->input->post('deskripsi')
+			);
+			$this->produk_model->update($id,$data); //akses model untuk menyimpan ke database
+                
+                //pesan yang muncul jika berhasil diupload pada session flashdata
+                $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Edit data berhasil !!</div></div>");
+                redirect('produk'); //jika berhasil maka akan ditampilkan view upload
+            }else{
+                //pesan yang muncul jika terdapat error dimasukkan pada session flashdata
+                $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Gagal edit data !!</div></div>");
+                redirect('produk/edit'); //jika gagal maka akan ditampilkan form upload
             }
         }
-        if($this->db->affected_rows() > 0){
-            echo "<script>alert('Data Berhasil Di Simpan');</script>";
-        }
-        echo "<script>window.location='".site_url('produk')."';</script>";
-    }
+
+	}
 
 	public function delete()
 	{
@@ -101,39 +141,7 @@ class Produk extends CI_Controller {
 		}
 	}
 
-	public function edit()
-	{
-		$id = $this->input->post('id');
-		$data = array(
-			'barcode' => $this->input->post('barcode'),
-			'nama_produk' => $this->input->post('nama_produk'),
-			'image' => $this->input->post('image'),
-			'kalori' => $this->input->post('kalori'),
-			'kategori' => $this->input->post('kategori'),
-			'harga' => $this->input->post('harga'),
-			'stok' => $this->input->post('stok'),
-			'deskripsi' => $this->input->post('deskripsi')
-		);
-		//upload photo
-		$config['max_size']=2048;
-		$config['allowed_types']="png|jpg|jpeg|gif";
-		$config['remove_spaces']=TRUE;
-		$config['overwrite']=TRUE;
-		$config['upload_path']=FCPATH.'gambar';
-
-		$this->load->library('upload');
-		$this->upload->initialize($config);
-
-		//ambil data image
-		$this->upload->do_upload('image');
-		$data_image=$this->upload->data('file_name');
-		$location=base_url().'gambar/';
-		$pict=$location.$data_image;
-
-		if ($this->produk_model->update($id,$data)) {
-			echo json_encode('sukses');
-		}
-	}
+	
 
 	public function get_produk()
 	{

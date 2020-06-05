@@ -5,10 +5,17 @@ class Produk_model extends CI_Model {
 
 	private $table = 'produk';
 
-	public function create($data)
-	{
-		return $this->db->insert($this->table, $data);
-	}
+	//fungsi insert ke database
+    public function get_insert($data){
+		$this->db->insert($this->table, $data);
+		return TRUE;
+	 }
+
+	 function get_allimage() {
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->result();
+ 	}
 
 	public function read()
 	{

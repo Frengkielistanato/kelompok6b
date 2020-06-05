@@ -29,7 +29,7 @@ class Pelanggan_model extends CI_Model {
 
 	public function getPelanggan($id)
 	{
-		$this->db->select('id, nama, username, password, jenis_kelamin, alamat, telepon');
+		$this->db->select('id, nama, username, password, jenis_kelamin, email, telepon');
 		$this->db->where('id', $id);
 		return $this->db->get($this->table);
 	}

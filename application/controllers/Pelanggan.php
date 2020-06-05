@@ -26,7 +26,7 @@ class Pelanggan extends CI_Controller {
 					'nama' => $pelanggan->nama,
 					'username' => $pelanggan->username,
 					'jenis_kelamin' => $pelanggan->jenis_kelamin,
-					'alamat' => $pelanggan->alamat,
+					'email' => $pelanggan->email,
 					'telepon' => $pelanggan->telepon,
 					'action' => '<button class="btn btn-sm btn-success" onclick="edit('.$pelanggan->id.')">Edit</button> <button class="btn btn-sm btn-danger" onclick="remove('.$pelanggan->id.')">Delete</button>'
 				);
@@ -46,7 +46,7 @@ class Pelanggan extends CI_Controller {
 			'nama' => $this->input->post('nama'),
 			'username' => $this->input->post('username'),
 			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-			'alamat' => $this->input->post('alamat'),
+			'email' => $this->input->post('email'),
 			'telepon' => $this->input->post('telepon'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin')
 		);
@@ -70,7 +70,7 @@ class Pelanggan extends CI_Controller {
 			'nama' => $this->input->post('nama'),
 			'username' => $this->input->post('username'),
 			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-			'alamat' => $this->input->post('alamat'),
+			'email' => $this->input->post('email'),
 			'telepon' => $this->input->post('telepon'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin')
 		);

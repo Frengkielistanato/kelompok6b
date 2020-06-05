@@ -47,7 +47,7 @@
                   <th>Nama</th>
                   <th>Username</th>
                   <th>Jenis Kelamin</th>
-                  <th>Alamat</th>
+                  <th>Email</th>
                   <th>Telepon</th>
                   <th>Actions</th>
                 </tr>
@@ -96,8 +96,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label>Alamat</label>
-        <input type="text" class="form-control" placeholder="Alamat" name="alamat" required>
+        <label>Email</label>
+        <input type="text" class="form-control" placeholder="Email" name="email" required>
       </div>
       <div class="form-group">
         <label>Telepon</label>

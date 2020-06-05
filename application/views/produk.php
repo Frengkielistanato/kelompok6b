@@ -78,7 +78,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <form id="form" enctype="multipart/form-data">
+    <form id="form" action="<?=base_url()?>produk/insert" method="post" enctype="multipart/form-data">
       <input type="hidden" name="id">
       <div class="form-group">
         <label>Barcode</label>
@@ -130,7 +130,7 @@
 <script src="<?php echo base_url('assets/vendor/adminlte/plugins/select2/js/select2.min.js') ?>"></script>
 <script>
   var readUrl = '<?php echo site_url('produk/read') ?>';
-  var addUrl = '<?php echo site_url('produk/add') ?>';
+  var insertteUrl = '<?php echo site_url('produk/insert') ?>';
   var deleteUrl = '<?php echo site_url('produk/delete') ?>';
   var editUrl = '<?php echo site_url('produk/edit') ?>';
   var getProdukUrl = '<?php echo site_url('produk/get_produk') ?>';
