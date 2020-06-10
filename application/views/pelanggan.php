@@ -37,7 +37,7 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-header">
-            <button class="btn btn-success" data-toggle="modal" data-target="#modal" onclick="add()">Add</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modal" onclick="add()">Tambah</button>
           </div>
           <div class="card-body">
             <table class="table w-100 table-bordered table-hover" id="pelanggan">
@@ -103,8 +103,8 @@
         <label>Telepon</label>
         <input type="number" class="form-control" placeholder="Telepon" name="telepon" required>
       </div>
-      <button class="btn btn-success" type="submit">Add</button>
-      <button class="btn btn-danger" data-dismiss="modal">Close</button>
+      <button class="btn btn-success" type="submit">Tambah</button>
+      <button class="btn btn-danger" data-dismiss="modal">Kembali</button>
     </form>
   </div>
 </div>

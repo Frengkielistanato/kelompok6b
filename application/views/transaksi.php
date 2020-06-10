@@ -130,7 +130,7 @@
       </div>
       <button id="add" class="btn btn-success" type="submit" onclick="bayar()" disabled>Bayar</button>
       <button id="cetak" class="btn btn-success" type="submit" onclick="bayarCetak()" disabled>Bayar Dan Cetak</button>
-      <button class="btn btn-danger" data-dismiss="modal">Close</button>
+      <button class="btn btn-danger" data-dismiss="modal">Kembali</button>
     </form>
   </div>
 </div>

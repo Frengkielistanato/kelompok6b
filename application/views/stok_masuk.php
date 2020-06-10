@@ -40,7 +40,7 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-header">
-            <button class="btn btn-success" data-toggle="modal" data-target="#modal">Add</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modal">Tambah</button>
           </div>
           <div class="card-body">
             <table class="table w-100 table-bordered table-hover" id="stok_masuk">
@@ -99,8 +99,8 @@
         <label>Lain</label>
         <input type="text" class="form-control" placeholder="Lain">
       </div>
-      <button class="btn btn-success" type="submit">Add</button>
-      <button class="btn btn-danger" data-dismiss="modal">Close</button>
+      <button class="btn btn-success" type="submit">Tambah</button>
+      <button class="btn btn-danger" data-dismiss="modal">Kembali</button>
     </form>
   </div>
 </div>

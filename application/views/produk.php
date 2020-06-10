@@ -39,7 +39,7 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-header">
-            <button class="btn btn-success" data-toggle="modal" data-target="#modal" onclick="add()">Add</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modal" onclick="add()">Tambah</button>
           </div>
           <div class="card-body">
             <table class="table w-100 table-bordered table-hover" id="produk">
@@ -67,12 +67,15 @@
   <!-- /.content-wrapper -->
 
 </div>
+<!-- ./wrapper -->
+<?php $this->load->view('includes/footer'); ?>
+<?php $this->load->view('partials/footer'); ?>
 
 <div class="modal fade" id="modal">
 <div class="modal-dialog">
 <div class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title">Add Data</h5>
+    <h5 class="modal-title">Tambah Data</h5>
     <button class="close" data-dismiss="modal">
       <span>&times;</span>
     </button>
@@ -113,16 +116,66 @@
         <input type="text" class="form-control" placeholder="Deskripsi" name="deskripsi" required>
       </div>
       <div class="form-group">
-      <button class="btn btn-success" type="submit">Add</button>
-      <button class="btn btn-danger" data-dismiss="modal">Close</button>
+      <button class="btn btn-success" type="submit">Tambah</button>
+      <button class="btn btn-danger" data-dismiss="modal">Kembali</button>
     </form>
   </div>
 </div>
 </div>
 </div>
-<!-- ./wrapper -->
-<?php $this->load->view('includes/footer'); ?>
-<?php $this->load->view('partials/footer'); ?>
+<div class="modal fade" id="modal">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Edit Data</h5>
+    <button class="close" data-dismiss="modal">
+      <span>&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form id="form" action="<?=base_url()?>produk/edit" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id">
+      <div class="form-group">
+        <label>Barcode</label>
+        <input type="text" class="form-control" placeholder="Barcode" name="barcode" required>
+      </div>
+      <div class="form-group">
+        <label>Nama</label>
+        <input type="text" class="form-control" placeholder="Nama" name="nama_produk" required>
+      </div>
+      <div class="form-group">
+        <label>Gambar</label>
+        <input type="file" class="form-control-file" placeholder="Gambar" name="image">
+      </div>
+      <div class="form-group">
+        <label>Kategori</label>
+        <select name="kategori" id="kategori" class="form-control select2" required></select>
+      </div>
+      <div class="form-group">
+        <label>Kalori</label>
+        <select name="kalori" id="kalori" class="form-control select2" required></select>
+      </div>
+      <div class="form-group">
+        <label>Harga</label>
+        <input type="text" class="form-control" placeholder="Harga" name="harga" required>
+      </div>
+      <div class="form-group">
+        <label>Stok</label>
+        <input type="text" class="form-control" placeholder="Stok" name="stok" value="0" readonly>
+      </div>
+      <div class="form-group">
+        <label>Deskripsi</label>
+        <input type="text" class="form-control" placeholder="Deskripsi" name="deskripsi" required>
+      </div>
+      <div class="form-group">
+      <button class="btn btn-success" type="submit">Edit</button>
+      <button class="btn btn-danger" data-dismiss="modal">Kembali</button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
 <script src="<?php echo base_url('assets/vendor/adminlte/plugins/datatables/jquery.dataTables.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/vendor/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/vendor/adminlte/plugins/jquery-validation/jquery.validate.min.js') ?>"></script>
