@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kantinsehat.kantinsehat">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_gklf"
+        android:label="@string/app_name"
+        android:name=".AppController"
+        android:roundIcon="@drawable/logo_gklf"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".sign.Sign_Up" />
+        <activity android:name=".sign.Sign_In" />
+        <activity android:name=".Dashboard.Dashboard" />
+        <activity android:name=".transaksi.Activity_checkout" />
+        <activity android:name=".Makanan.Activity_Makanan" />
+        <activity android:name=".Makanan.Detail_Makanan" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
