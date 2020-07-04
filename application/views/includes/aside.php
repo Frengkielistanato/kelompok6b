@@ -66,7 +66,31 @@
             </li>
           </ul>
         </li>
+<<<<<<< HEAD
      
+=======
+        <li class="nav-item has-treeview <?php echo $uri == 'stok_masuk' || $uri == 'stok_keluar' ? 'menu-open' : 'no' ?>">
+          <a href="#" class="nav-link <?php echo $uri == 'stok_masuk' || $uri == 'stok_keluar' ? 'active' : 'no' ?>">
+            <i class="fas fa-archive nav-icon"></i>
+            <p>Stok</p>
+            <i class="right fas fa-angle-right"></i>
+          </a>
+          <ul class="nav-treeview">
+            <li class="nav-item">
+              <a href="<?php echo site_url('stok_masuk') ?>" class="nav-link <?php echo $uri == 'stok_masuk' ? 'active' : 'no' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Stok Masuk</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('stok_keluar') ?>" class="nav-link <?php echo $uri == 'stok_keluar' ? 'active' : 'no' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Stok Keluar</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
         <li class="nav-item">
           <a href="<?php echo site_url('transaksi') ?>" class="nav-link <?php echo $uri == 'transaksi' ? 'active' : 'no' ?>">
             <i class="fas fa-money-bill nav-icon"></i>
@@ -74,12 +98,40 @@
           </a>
         </li>
         <li class="nav-item has-treeview <?php echo $uri == 'laporan_penjualan' || $uri == 'laporan_stok_masuk' || $uri == 'laporan_stok_keluar' ? 'menu-open' : 'no' ?>">
+<<<<<<< HEAD
         <a href="<?php echo site_url('laporan_penjualan') ?>" class="nav-link <?php echo $uri == 'laporan_penjualan' ? 'active' : 'no' ?>">
                 <i class="far fa-circle nav-icon"></i>
             <p>Laporan</p>
             <i class="right fas fa-angle-right"></i>
           </a>
           
+=======
+          <a href="<?php echo site_url('laporan') ?>" class="nav-link <?php echo $uri == 'laporan_penjualan' || $uri == 'laporan_stok_masuk' || $uri == 'laporan_stok_keluar' ? 'active' : 'no' ?>">
+            <i class="fas fa-book nav-icon"></i>
+            <p>Laporan</p>
+            <i class="right fas fa-angle-right"></i>
+          </a>
+          <ul class="nav-treeview">
+            <li class="nav-item">
+              <a href="<?php echo site_url('laporan_penjualan') ?>" class="nav-link <?php echo $uri == 'laporan_penjualan' ? 'active' : 'no' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Laporan Penjualan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('laporan_stok_masuk') ?>" class="nav-link <?php echo $uri == 'laporan_stok_masuk' ? 'active' : 'no' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Laporan Stok Masuk</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('laporan_stok_keluar') ?>" class="nav-link <?php echo $uri == 'laporan_stok_keluar' ? 'active' : 'no' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Laporan Stok Keluar</p>
+              </a>
+            </li>
+          </ul>
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
         </li>
         <?php if ($role === 'admin'): ?>
           <li class="nav-item">

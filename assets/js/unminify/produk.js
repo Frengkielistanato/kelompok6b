@@ -106,7 +106,10 @@ function edit(id) {
             $('[name="id"]').val(res.id);
             $('[name="barcode"]').val(res.barcode);
             $('[name="nama_produk"]').val(res.nama_produk);
+<<<<<<< HEAD
             $('[name="image"]').val(res.image);
+=======
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
             $('[name="kategori"]').append(`<option value='${res.kategori_id}'>${res.kategori}</option>`);
             $('[name="kalori"]').append(`<option value='${res.kalori_id}'>${res.kalori}</option>`);
             $('[name="harga"]').val(res.harga);

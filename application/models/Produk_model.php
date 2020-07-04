@@ -40,7 +40,11 @@ class Produk_model extends CI_Model {
 	
 	public function getProduk($id)
 	{
+<<<<<<< HEAD
 		$this->db->select('produk.id, produk.barcode, produk.nama_produk, produk.image, produk.harga, produk.stok, produk.deskripsi, kategori_produk.id as kategori_id, kategori_produk.kategori, kalori_produk.id as kalori_id, kalori_produk.kalori');
+=======
+		$this->db->select('produk.id, produk.barcode, produk.nama_produk, produk.harga, produk.stok, produk.deskripsi, kategori_produk.id as kategori_id, kategori_produk.kategori, kalori_produk.id as kalori_id, kalori_produk.kalori');
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
 		$this->db->from($this->table);
 		$this->db->join('kategori_produk', 'produk.kategori = kategori_produk.id');
 		$this->db->join('kalori_produk', 'produk.kalori = kalori_produk.id');

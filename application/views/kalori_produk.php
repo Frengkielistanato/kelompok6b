@@ -37,7 +37,11 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-header">
+<<<<<<< HEAD
             <button class="btn btn-success" data-toggle="modal" data-target="#modal" onclick="add()">Add</button>
+=======
+            <button class="btn btn-success" data-toggle="modal" data-target="#modal" onclick="add()">Tambah</button>
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
           </div>
           <div class="card-body">
             <table class="table w-100 table-bordered table-hover" id="kalori_produk">
@@ -75,8 +79,13 @@
         <label>Kalori</label>
         <input type="text" class="form-control" placeholder="Kalori" name="kalori" required>
       </div>
+<<<<<<< HEAD
       <button class="btn btn-success" type="submit">Add</button>
       <button class="btn btn-danger" data-dismiss="modal">Close</button>
+=======
+      <button class="btn btn-success" type="submit">Tambah</button>
+      <button class="btn btn-danger" data-dismiss="modal">Kembali</button>
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
     </form>
   </div>
 </div>

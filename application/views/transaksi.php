@@ -51,7 +51,11 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
+<<<<<<< HEAD
               <label>Id Barang</label>
+=======
+              <label>Barcode</label>
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
               <div class="form-inline">
                 <select id="barcode" class="form-control select2 col-sm-6" onchange="getNama()"></select>
                 <span class="ml-3 text-muted" id="nama_produk"></span>
@@ -81,7 +85,11 @@
           <table class="table w-100 table-bordered table-hover" id="transaksi">
             <thead>
               <tr>
+<<<<<<< HEAD
                 <th>Id Barang</th>
+=======
+                <th>Barcode</th>
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
                 <th>Nama</th>
                 <th>Harga</th>
                 <th>Jumlah</th>
@@ -130,7 +138,11 @@
       </div>
       <button id="add" class="btn btn-success" type="submit" onclick="bayar()" disabled>Bayar</button>
       <button id="cetak" class="btn btn-success" type="submit" onclick="bayarCetak()" disabled>Bayar Dan Cetak</button>
+<<<<<<< HEAD
       <button class="btn btn-danger" data-dismiss="modal">Close</button>
+=======
+      <button class="btn btn-danger" data-dismiss="modal">Kembali</button>
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
     </form>
   </div>
 </div>

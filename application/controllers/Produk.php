@@ -106,7 +106,11 @@ class Produk extends CI_Controller {
 		if($_FILES['image']['name'])
 		{
 			if ($this->upload->do_upload('image'))
+<<<<<<< HEAD
 			{	
+=======
+		{	
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
 			$id = $this->input->post('id');
 			$gambar = $this->upload->data();
 			$data = array(
@@ -127,7 +131,11 @@ class Produk extends CI_Controller {
             }else{
                 //pesan yang muncul jika terdapat error dimasukkan pada session flashdata
                 $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Gagal edit data !!</div></div>");
+<<<<<<< HEAD
                 redirect('produk'); //jika gagal maka akan ditampilkan form upload
+=======
+                redirect('produk/edit'); //jika gagal maka akan ditampilkan form upload
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
             }
         }
 

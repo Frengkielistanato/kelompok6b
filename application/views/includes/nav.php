@@ -21,8 +21,11 @@
   </ul>
  
 </nav>
+<<<<<<< HEAD
 <script>
 
 var base = '<?= base_url() ?>';
 </script>
+=======
+>>>>>>> 6cc15efd71d98f7ea841fcc0c086bf6cbff88fe4
 <!-- /.navbar -->
